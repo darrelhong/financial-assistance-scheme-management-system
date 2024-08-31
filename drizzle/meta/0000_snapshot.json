@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "11eb73fd-ece2-4f83-a029-0b8e5b234100",
+  "id": "6c7913a2-5109-4c9b-9738-02c8efe6fe31",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "administrator": {
@@ -9,10 +9,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": true,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": true
         },
         "name": {
           "name": "name",
@@ -40,10 +40,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": true,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": true
         },
         "name": {
           "name": "name",
@@ -86,10 +86,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": true,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": true
         },
         "applicant_id": {
           "name": "applicant_id",
@@ -135,8 +135,12 @@
           "name": "application_applicant_id_applicant_id_fk",
           "tableFrom": "application",
           "tableTo": "applicant",
-          "columnsFrom": ["applicant_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "applicant_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -144,8 +148,12 @@
           "name": "application_scheme_id_scheme_id_fk",
           "tableFrom": "application",
           "tableTo": "scheme",
-          "columnsFrom": ["scheme_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "scheme_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -158,10 +166,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": true,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": true
         },
         "name": {
           "name": "name",

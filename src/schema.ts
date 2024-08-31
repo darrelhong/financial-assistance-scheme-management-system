@@ -1,9 +1,9 @@
 import { sql } from "drizzle-orm";
 
-import { text, sqliteTable } from "drizzle-orm/sqlite-core";
+import { text, integer, sqliteTable } from "drizzle-orm/sqlite-core";
 
 export const administrator = sqliteTable("administrator", {
-  id: text("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   createdAt: text("createdAt")
     .notNull()
@@ -11,7 +11,7 @@ export const administrator = sqliteTable("administrator", {
 });
 
 export const applicant = sqliteTable("applicant", {
-  id: text("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   // json data about the applicant e.g. { age, income, etc }
   fields: text("fields").notNull(),
@@ -25,7 +25,7 @@ export const applicant = sqliteTable("applicant", {
 });
 
 export const scheme = sqliteTable("scheme", {
-  id: text("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   // json data about the eligibity criteria e.g. { age, income, etc }
   eligibility: text("eligibility").notNull(),
@@ -39,7 +39,7 @@ export const scheme = sqliteTable("scheme", {
 });
 
 export const application = sqliteTable("application", {
-  id: text("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   applicant_id: text("applicant_id")
     .notNull()
     .references(() => applicant.id),

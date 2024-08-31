@@ -1,11 +1,11 @@
 CREATE TABLE `administrator` (
-	`id` text PRIMARY KEY NOT NULL,
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
 	`createdAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `applicant` (
-	`id` text PRIMARY KEY NOT NULL,
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
 	`fields` text NOT NULL,
 	`createdAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE `applicant` (
 );
 --> statement-breakpoint
 CREATE TABLE `application` (
-	`id` text PRIMARY KEY NOT NULL,
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`applicant_id` text NOT NULL,
 	`scheme_id` text NOT NULL,
 	`status` text NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE `application` (
 );
 --> statement-breakpoint
 CREATE TABLE `scheme` (
-	`id` text PRIMARY KEY NOT NULL,
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
 	`eligibility` text NOT NULL,
 	`createdAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
