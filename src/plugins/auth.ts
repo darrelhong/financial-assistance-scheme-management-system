@@ -20,16 +20,20 @@ export default fp(
           return done(new Error("Missing token cookie"));
         }
 
-        fastify.jwt.verify(token, (err, decoded) => {
-          if (err || !decoded.id || !decoded.name) {
-            return done(new Error("Token is not valid"));
-          }
-          request.admin = {
-            id: decoded.id,
-            name: decoded.name,
-          };
-          done();
+        const decoded: any = await new Promise((resolve, reject) => {
+          fastify.jwt.verify(token, {}, (err, decoded) => {
+            if (err) {
+              return reject(err);
+            } else {
+              resolve(decoded);
+            }
+          });
         });
+
+        request.admin = {
+          id: decoded.id,
+          name: decoded.name,
+        };
       }
     );
   },
