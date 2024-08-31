@@ -15,22 +15,21 @@ export default fp(
         reply: FastifyReply,
         done: HookHandlerDoneFunction
       ) => {
-        if (
-          !request.raw.headers.auth ||
-          Array.isArray(request.raw.headers.auth)
-        ) {
-          return done(new Error("Missing token header"));
+        const { token } = request.cookies;
+        if (!token) {
+          return done(new Error("Missing token cookie"));
         }
 
-        const decoded = fastify.jwt.verify(request.raw.headers.auth) as {
-          id: number;
-          name: string;
-        };
-
-        request.admin = {
-          id: decoded.id,
-          name: decoded.name,
-        };
+        fastify.jwt.verify(token, (err, decoded) => {
+          if (err || !decoded.id || !decoded.name) {
+            return done(new Error("Token is not valid"));
+          }
+          request.admin = {
+            id: decoded.id,
+            name: decoded.name,
+          };
+          done();
+        });
       }
     );
   },

@@ -2,6 +2,7 @@ import * as path from "path";
 import AutoLoad, { AutoloadPluginOptions } from "@fastify/autoload";
 import { FastifyPluginAsync } from "fastify";
 import { fileURLToPath } from "url";
+import fastifyCookiePlugin from "@fastify/cookie";
 
 import dotenv from "dotenv";
 
@@ -25,6 +26,7 @@ const app: FastifyPluginAsync<AppOptions> = async (
 ): Promise<void> => {
   // Place here your custom code!
 
+  fastify.register(fastifyCookiePlugin);
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins

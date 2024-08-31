@@ -23,6 +23,7 @@ const admin: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
           if (err) {
             return reply.send(err);
           }
+          reply.setCookie("token", token);
           reply.send({ token });
         });
       }
