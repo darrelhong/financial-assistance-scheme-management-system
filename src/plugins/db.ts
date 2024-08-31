@@ -1,12 +1,6 @@
-import dotenv from "dotenv";
-
-dotenv.config({
-  path: [".env", ".env.local"],
-});
-
 import fp from "fastify-plugin";
 
-import * as schema from "@/schema.js";
+import * as schema from "../schema.js";
 import { createClient } from "@libsql/client";
 import { drizzle, LibSQLDatabase } from "drizzle-orm/libsql";
 
@@ -25,7 +19,7 @@ export default fp(
       await client.close();
     });
   },
-  { name: "drizzle-plugin" },
+  { name: "drizzle-plugin" }
 );
 
 declare module "fastify" {
