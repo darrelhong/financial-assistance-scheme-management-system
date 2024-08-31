@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1725079955597,
+      "tag": "0000_stormy_proteus",
+      "breakpoints": true
+    }
+  ]
+}
