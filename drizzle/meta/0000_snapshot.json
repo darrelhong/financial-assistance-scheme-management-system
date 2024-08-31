@@ -135,12 +135,8 @@
           "name": "application_applicant_id_applicant_id_fk",
           "tableFrom": "application",
           "tableTo": "applicant",
-          "columnsFrom": [
-            "applicant_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["applicant_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -148,12 +144,8 @@
           "name": "application_scheme_id_scheme_id_fk",
           "tableFrom": "application",
           "tableTo": "scheme",
-          "columnsFrom": [
-            "scheme_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["scheme_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
