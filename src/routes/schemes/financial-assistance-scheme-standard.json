@@ -1,0 +1,7 @@
+{
+  "and": [
+    { ">=": [{ "var": "age" }, 32] },
+    { "==": [{ "var": "employmentStatus" }, "unemployed"] },
+    { "<=": ["2024-04-01", { "var": "retrenchmentDate" }, "2024-10-01"] }
+  ]
+}
