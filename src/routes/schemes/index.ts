@@ -1,5 +1,6 @@
 import { scheme } from "../../schema.js";
 import { FastifyPluginAsync } from "fastify";
+// @ts-ignore
 import jsonLogic from "json-logic-js";
 
 const example: FastifyPluginAsync = async (fastify, opts): Promise<void> => {

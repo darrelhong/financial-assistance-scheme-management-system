@@ -1,6 +1,7 @@
 import { FastifyPluginAsync } from "fastify";
 import { application, applicant, scheme } from "../../schema.js";
 import { eq } from "drizzle-orm";
+// @ts-ignore
 import jsonLogic from "json-logic-js";
 
 const applications: FastifyPluginAsync = async (
