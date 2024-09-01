@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "6c7913a2-5109-4c9b-9738-02c8efe6fe31",
+  "id": "3b2970b1-fb46-48a3-9f98-bf0e9729b2f8",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "administrator": {
@@ -93,14 +93,14 @@
         },
         "applicant_id": {
           "name": "applicant_id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
         "scheme_id": {
           "name": "scheme_id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false

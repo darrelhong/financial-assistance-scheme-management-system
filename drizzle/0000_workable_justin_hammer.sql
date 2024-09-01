@@ -14,8 +14,8 @@ CREATE TABLE `applicant` (
 --> statement-breakpoint
 CREATE TABLE `application` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-	`applicant_id` text NOT NULL,
-	`scheme_id` text NOT NULL,
+	`applicant_id` integer NOT NULL,
+	`scheme_id` integer NOT NULL,
 	`status` text NOT NULL,
 	`createdAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	`updatedAt` text DEFAULT CURRENT_TIMESTAMP NOT NULL,

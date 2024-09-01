@@ -40,10 +40,10 @@ export const scheme = sqliteTable("scheme", {
 
 export const application = sqliteTable("application", {
   id: integer("id").primaryKey({ autoIncrement: true }),
-  applicant_id: text("applicant_id")
+  applicant_id: integer("applicant_id")
     .notNull()
     .references(() => applicant.id),
-  scheme_id: text("scheme_id")
+  scheme_id: integer("scheme_id")
     .notNull()
     .references(() => scheme.id),
   status: text("status").notNull(),
