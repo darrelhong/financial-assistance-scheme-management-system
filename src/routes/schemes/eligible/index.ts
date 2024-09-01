@@ -35,7 +35,13 @@ const eligibleSchemes: FastifyPluginAsync = async (
       }
 
       const applicantData = applicantRes[0];
-      const applicantFields = JSON.parse(applicantData.fields);
+
+      let applicantFields;
+      try {
+        applicantFields = JSON.parse(applicantData.fields);
+      } catch (e) {
+        return reply.status(400).send({ error: "Invalid applicant fields" });
+      }
 
       const eligbleSchemes: Pick<typeof scheme.$inferSelect, "id" | "name">[] =
         [];
