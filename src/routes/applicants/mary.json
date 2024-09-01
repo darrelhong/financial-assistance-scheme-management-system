@@ -1,0 +1,7 @@
+{
+  "age": 32,
+  "maritalStatus": "married",
+  "retrenchmentDate": "2026-07-30",
+  "employmentStatus": "unemployed",
+  "children": [{ "age": 8 }, { "age": 6 }]
+}
