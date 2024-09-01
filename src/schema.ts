@@ -46,7 +46,9 @@ export const application = sqliteTable("application", {
   scheme_id: integer("scheme_id")
     .notNull()
     .references(() => scheme.id),
-  status: text("status").notNull(),
+  status: text("status", {
+    enum: ["pending", "successful", "unsuccessful"],
+  }).notNull(),
   createdAt: text("createdAt")
     .notNull()
     .default(sql`CURRENT_TIMESTAMP`),
