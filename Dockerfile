@@ -9,7 +9,7 @@ COPY . .
 
 RUN npm run build:ts
 
-FROM node:20-alpine AS production
+FROM node:20-slim AS production
 
 ENV NODE_ENV production
 
