@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "3b2970b1-fb46-48a3-9f98-bf0e9729b2f8",
+  "id": "d1d0f6aa-a0fe-4fa6-9da0-ee5bb8916275",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "administrator": {
@@ -84,13 +84,6 @@
     "application": {
       "name": "application",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "integer",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": true
-        },
         "applicant_id": {
           "name": "applicant_id",
           "type": "integer",
@@ -158,7 +151,15 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "application_applicant_id_scheme_id_pk": {
+          "columns": [
+            "applicant_id",
+            "scheme_id"
+          ],
+          "name": "application_applicant_id_scheme_id_pk"
+        }
+      },
       "uniqueConstraints": {}
     },
     "scheme": {
