@@ -40,6 +40,8 @@ To run initial migrations,
 
 To add data, view example API calls in [`postman.json`](postman.json).
 
+Log in using username=admin and password=password
+
 # Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
 
 This project was bootstrapped with Fastify-CLI.
