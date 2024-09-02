@@ -5,7 +5,18 @@ import { FastifyPluginAsync } from "fastify";
 const admin: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
   fastify.post<{ Body: { username: string; password: string } }>(
     "/login",
-
+    {
+      schema: {
+        body: {
+          type: "object",
+          required: ["username", "password"],
+          properties: {
+            username: { type: "string" },
+            password: { type: "string" },
+          },
+        },
+      },
+    },
     async function (request, reply) {
       // hardcode for simplicity
       if (

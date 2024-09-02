@@ -3,6 +3,8 @@ import AutoLoad, { AutoloadPluginOptions } from "@fastify/autoload";
 import { FastifyPluginAsync } from "fastify";
 import { fileURLToPath } from "url";
 import fastifyCookiePlugin from "@fastify/cookie";
+import fastifySwaggerPlugin from "@fastify/swagger";
+import fastifySwaggerUiPlugin from "@fastify/swagger-ui";
 
 import dotenv from "dotenv";
 
@@ -25,6 +27,20 @@ const app: FastifyPluginAsync<AppOptions> = async (
   opts
 ): Promise<void> => {
   // Place here your custom code!
+  fastify.register(fastifySwaggerPlugin, {
+    openapi: {
+      openapi: "3.0.0",
+      info: {
+        title: "API Documentation",
+        description: "API Documentation",
+        version: "0.1.0",
+      },
+    },
+  });
+
+  fastify.register(fastifySwaggerUiPlugin, {
+    routePrefix: "/documentation",
+  });
 
   fastify.register(fastifyCookiePlugin);
   // Do not touch the following lines
