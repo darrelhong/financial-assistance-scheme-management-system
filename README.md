@@ -1,6 +1,6 @@
 # Overview
 
-Database schema is defined in `src/schema.ts`, and generated migrations are at `drizle/*.sql`.
+Database schema is defined in [`src/schema.ts`](src/schema.ts), and generated migrations are at [`drizle/*.sql`](drizzle).
 
 It has 4 tables with minimal fields for now.
 
@@ -10,9 +10,9 @@ Authentication is done with hardcoded user and password as proof-of-concept. It 
 
 ## Scheme
 
-There is 2 parts to checking elibility for assistance schemes. The first is storing user fields to compare with the critieria. This is done using json and storing the string in database, this allows for flexibility in adding and removing fields and nested data. To ensure that not any free form json is allowed, all json inputs are validated using Zod to ensure input adheres to the desired structure. The schema is defined in `src/routes/applicants/applicant-fields-schema.ts`.
+There is 2 parts to checking elibility for assistance schemes. The first is storing user fields to compare with the critieria. This is done using json and storing the string in database, this allows for flexibility in adding and removing fields and nested data. To ensure that not any free form json is allowed, all json inputs are validated using Zod to ensure input adheres to the desired structure. The schema is defined in [`src/routes/applicants/applicant-fields-schema.ts`](src/routes/applicants/applicant-fields-schema.ts).
 
-The second part is storing the eligibilty logic. Once again json is chosen and with the use of JsonLogic library, any complex and arbitrary rules can be represented in json and stored in the database. Similarly this json is validated before persistence. Example rules can be view at `src/routes/schemes`. The rules can be applied against any user simply using the JsonLogic library. If depending on an external library is too risky, similar logic system could also be implemented instead.
+The second part is storing the eligibilty logic. Once again json is chosen and with the use of JsonLogic library, any complex and arbitrary rules can be represented in json and stored in the database. Similarly this json is validated before persistence. Example rules can be view at [`src/routes/schemes`](src/routes/schemes). The rules can be applied against any user simply using the JsonLogic library. If depending on an external library is too risky, similar logic system could also be implemented instead.
 
 # Deployment
 
@@ -22,7 +22,7 @@ Database instance is hosted on Turso.
 
 # Documentation
 
-API documentation can be found at `/documentation` route. Example API calls can be found in `postman.json`.
+API documentation can be found at [`/documentation`](https://financial-assistance-scheme-management-system-232576732371.asia-southeast1.run.app/documentation) route. Example API calls can be found in [`postman.json`](postman.json).
 
 # Setup
 
