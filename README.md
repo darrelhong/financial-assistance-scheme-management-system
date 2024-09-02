@@ -22,7 +22,7 @@ Database instance is hosted on Turso.
 
 # Documentation
 
-API documentation can be found at [`/documentation`](https://financial-assistance-scheme-management-system-232576732371.asia-southeast1.run.app/documentation) route. Example API calls can be found in [`postman.json`](postman.json).
+API documentation can be found at [`/documentation`](https://financial-assistance-scheme-management-system-232576732371.asia-southeast1.run.app/documentation) route.
 
 # Setup
 
@@ -33,6 +33,12 @@ TURSO_DB_URL=
 TURSO_DB_TOKEN=
 JWT_SECRET= (for jwt plugin)
 ```
+
+To run initial migrations,
+
+`npx drizzle-kit migrate`
+
+To add data, view example API calls in [`postman.json`](postman.json).
 
 # Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
 
