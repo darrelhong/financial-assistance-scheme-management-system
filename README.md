@@ -28,9 +28,11 @@ API documentation can be found at [`/documentation`](https://financial-assistanc
 
 To run the project locally, you will first need to provide Turso credentials thorugh environment variables.
 
-`TURSO_DB_URL`
-`TURSO_DB_TOKEN`
-`JWT_SECRET` (for jwt plugin)
+```
+TURSO_DB_URL=
+TURSO_DB_TOKEN=
+JWT_SECRET= (for jwt plugin)
+```
 
 # Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
 
