@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "fasms",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "admin login",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/admin/login",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "admin me",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/admin/me",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "bruno",
+      "event": []
+    },
+    {
+      "name": "create a new application",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/applications",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"applicant_id\": 2,\n  \"scheme_id\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "create new applicant Mary",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/applicants",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mary\",\n  \"fields\": {\n    \"age\": 32,\n    \"maritalStatus\": \"married\",\n    \"retrenchmentDate\": \"2024-07-30\",\n    \"employmentStatus\": \"unemployed\",\n    \"children\": [\n      {\n        \"age\": 8\n      },\n      {\n        \"age\": 6\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "create new applicant",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/applicants",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"James\",\n  \"fields\": {\n    \"age\": 35,\n    \"retrenchmentDate\": \"2024-06-30\",\n    \"employmentStatus\": \"unemployed\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "create scheme Retrenchment assistance scheme",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/schemes",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Retrenchment assistance scheme\",\n  \"eligibilityLogic\": {\n    \"and\": [\n      {\n        \">=\": [\n          {\n            \"var\": \"age\"\n          },\n          32\n        ]\n      },\n      {\n        \"==\": [\n          {\n            \"var\": \"employmentStatus\"\n          },\n          \"unemployed\"\n        ]\n      },\n      {\n        \"<=\": [\n          \"2024-04-01\",\n          {\n            \"var\": \"retrenchmentDate\"\n          },\n          \"2024-10-01\"\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "create scheme fas scheme with children",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/schemes",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Retrenchment assistance scheme with children\",\n  \"eligibilityLogic\": {\n    \"and\": [\n      {\n        \">=\": [\n          {\n            \"var\": \"age\"\n          },\n          32\n        ]\n      },\n      {\n        \"==\": [\n          {\n            \"var\": \"employmentStatus\"\n          },\n          \"unemployed\"\n        ]\n      },\n      {\n        \"<=\": [\n          \"2024-04-01\",\n          {\n            \"var\": \"retrenchmentDate\"\n          },\n          \"2024-10-01\"\n        ]\n      },\n      {\n        \"some\": [\n          {\n            \"var\": \"children\"\n          },\n          {\n            \"<=\": [\n              {\n                \"var\": \"age\"\n              },\n              16\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "get all applicants",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/applicants",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "get all schemes",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/schemes",
+          "host": [],
+          "path": [],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "get eligible schemes Mary",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/schemes/eligible?applicant=2",
+          "host": [],
+          "path": [],
+          "query": [
+            {
+              "key": "applicant",
+              "value": "2"
+            }
+          ],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "get eligible schemes james",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "",
+        "url": {
+          "raw": "{{ENDPOINT}}/schemes/eligible?applicant=1",
+          "host": [],
+          "path": [],
+          "query": [
+            {
+              "key": "applicant",
+              "value": "1"
+            }
+          ],
+          "variable": []
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "ENDPOINT",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
